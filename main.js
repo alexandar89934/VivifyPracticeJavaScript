@@ -114,3 +114,48 @@ for (let i = 0; i < convertedArray.length; i++) {
     
 }
 
+//es5 function
+function esFiveFunc (name) {
+    return 'hello ' + name
+   }
+
+//es6 function
+   const esSixFunc = name => `hello ${name}`;
+
+
+//async/await vs. Promise.then
+
+function isGreater (a, b, cb) {
+  
+    var greater = false
+    if(a > b) {
+      greater = true
+    }
+    cb(greater)
+  }
+
+  isGreater(1, 2, function (result) {
+    if(result) {
+      console.log('greater');
+    } else {
+      console.log('smaller')
+    }
+  })
+
+
+  const isGreaterPromise = (a, b) => {
+    return new Promise ((resolve, reject) => {
+     if(a > b) {
+      resolve(true)
+     } else {
+      reject(false)
+     }
+    })
+   }
+   isGreaterPromise(1, 2)
+    .then(result => {
+       console.log('greater')
+    })
+    .catch(result => {
+       console.log('smaller')
+    })
