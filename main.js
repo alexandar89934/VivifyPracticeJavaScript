@@ -82,4 +82,35 @@ function timesTwo(number) {
         
 (number) => {number * 2};
     
+var personObj = {
+	firstName: "Aleksandar",
+	lastName: "Radovanovic",
+	age: 30,
+}
+console.log(personObj);
+
+var personJson = '{"firstName":"Aleksandar", "lastName":"Radovanovic", "age":"30"}';
+
+console.log(personJson);
+
+var jsonParsedObj = JSON.parse(personJson);
+
+console.log(jsonParsedObj);
+
+var stringifyObj = JSON.stringify(personObj);
+
+console.log(stringifyObj);
+
+
+var numberArray = [4,3,2,5,3,4,2];
+
+var jsonNumberArray = '{"1","6","4","2","7"}';
+
+var convertedArray = JSON.stringify(jsonNumberArray);
+
+for (let i = 0; i < convertedArray.length; i++) {
+    const element = convertedArray[i];
+    console.log(element);
+    
+}
 
