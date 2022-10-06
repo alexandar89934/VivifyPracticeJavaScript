@@ -56,6 +56,30 @@ var myZoo = [
   console.log(zooInventory(myZoo));
   
       
+
+const array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.map(x => x * x);
+
+console.log(map1);
+// expected output: Array [1,16,81,256]
+
+
+
+(function() {
+   
+    function add(a, b) {
+        return a + b;
+    }
+
+    console.log(add(10,20)); // 30
+}());
+
+function timesTwo(number) {
+    return number * 2
+  }
         
+(number) => {number * 2};
     
 
