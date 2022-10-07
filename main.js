@@ -186,3 +186,68 @@ function isGreater (a, b, cb) {
             function(error) {console.log(error)}
             
             );
+
+class Character {
+
+    static counter = 0;
+
+    constructor(x,y) {
+        this.x = x;
+        this.y = y;
+        if (this.constructor == Character) {
+          throw new Error("Abstract classes can't be instantiated.");
+        }
+      }
+
+      play(){
+        throw new Error("Method must be implemented");
+      }
+}
+
+class playerCharacter extends Character {
+
+    constructor(x,y){
+        super();
+        if(x>10 || y>10){ 
+            throw new Error("Position is out of scope.");
+          }
+          else{
+            this.x = x;
+            this.y = y;
+            Character.counter++;
+          }
+       
+    }
+        play(){
+            console.log("play");
+        };
+}
+
+class nonPlayerCharacter extends Character {
+
+    constructor(x,y){
+        super();
+        if(x>10 || y>10){ 
+            throw new Error("Position is out of scope.");
+          }
+          else{
+            this.x = x;
+            this.y = y;
+            Character.counter++;
+          }
+       
+    }
+    play(){
+        console.log("play");
+    };
+
+     
+}
+
+var player = new playerCharacter(3,4).play();
+
+var nonPlayer = new nonPlayerCharacter(2,4).play();
+
+console.log(Character.counter);
+
+
