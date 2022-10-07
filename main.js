@@ -159,3 +159,30 @@ function isGreater (a, b, cb) {
     .catch(result => {
        console.log('smaller')
     })
+
+
+
+
+    const myPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("foo");
+        }, 1000);
+      });
+      
+        myPromise
+        .then(console.log("This is how handle Fulfilled A"), console.log("This is how handle Rejected A"))
+        .then(console.log("This is how handle Fulfilled B"), console.log("This is how handle Rejected B"))
+        .then(console.log("This is how handle Fulfilled C"), console.log("This is how handle Rejected C"));
+
+
+    const myPromiseOne = new Promise(function(myResolve, myReject) {
+            setTimeout(function() { myResolve("Success!"),
+                                    myReject("Error!")
+            }, 3000);
+          });
+          
+        myPromiseOne.then(
+            function(value) {console.log(value)},
+            function(error) {console.log(error)}
+            
+            );
